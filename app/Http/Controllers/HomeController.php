@@ -3,6 +3,9 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use GuzzleHttp\Client;
+use Cmfcmf\OpenWeatherMap;
+use Cmfcmf\OpenWeatherMap\Exception as OWMException;
 
 class HomeController extends Controller
 {
@@ -23,6 +26,16 @@ class HomeController extends Controller
      */
     public function index()
     {
-        return view('home');
+        $data_news=$this->request_news();
+        dd($data_news);
+        return view('home',['data_news'=>$data_news]);
+    }
+
+
+    public function request_news()
+    {
+        $client = new Client();
+        $res = $client->request('GET', 'https://newsapi.org/v2/sources?apiKey=5751939ffffa41489c58d6f5408ac191');
+        return  $res;
     }
 }

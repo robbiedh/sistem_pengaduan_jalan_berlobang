@@ -80,7 +80,19 @@
             <div class="content">
                 <div class="title m-b-md">
                     Laravel
+                   
+                    
+
                 </div>
+                <div>
+                        data cuaca
+                        {{$data_cuaca['high']}}
+                        {{$data_cuaca['low']}}
+                            
+                        
+                        </div>
+                        
+                
 
                 <div class="links">
                     <a href="https://laravel.com/docs">Documentation</a>
@@ -92,5 +104,23 @@
                 </div>
             </div>
         </div>
+        <table style="border: 1px solid black;">
+                <tr>
+                        <th>Name News</th>
+                      </tr>
+                <tr>
+                @foreach($data_news as $key => $data)
+                <td>
+                    <a href=" {{$data_news[$key]['url']}} ">
+                        <img width="200" height="200" src=" {{$data_news[$key]['urlToImage']}}"/>
+                        <br>
+                        {{$data_news[$key]['title']}}   
+                    </a>
+                </td>
+                    
+                </tr>
+
+                @endforeach
+                </table>
     </body>
 </html>
