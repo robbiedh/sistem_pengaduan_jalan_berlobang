@@ -14,12 +14,14 @@ class GuestController extends Controller
     {
         $data_news=$this->request_news();
        // dd($data_news);
-       $data_cuaca=YahooWeather::Country('egypt','ar');
+       $data_cuaca=YahooWeather::Country('indonesia','Bandung');
+
+      // dd($data_cuaca);
       
        $position = Location::get();
-       dd($position);
+       
 
-        return view('welcome',['data_news'=>$data_news, 'data_cuaca'=>$data_cuaca]);
+        return view('berita',['data_news'=>$data_news, 'data_cuaca'=>$data_cuaca]);
     }
     public function request_news()
     {
