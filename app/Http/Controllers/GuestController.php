@@ -17,7 +17,7 @@ class GuestController extends Controller
        $data_cuaca=YahooWeather::Country('egypt','ar');
       
        $position = Location::get();
-       dd($position);
+      
 
         return view('welcome',['data_news'=>$data_news, 'data_cuaca'=>$data_cuaca]);
     }
