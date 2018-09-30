@@ -1,6 +1,29 @@
-@extends('layouts.app')
+@extends('layouts.layout')
 
 @section('content')
+<section id="hello" class="home bg-mega">
+        <div class="overlay">
+        </div>
+        <div class="container">
+            <div class="row">
+                <div class="main_home text-center">
+                    <div class="home_text">
+                        <h4 class="text-white text-uppercase">a new creative studio</h4>
+                        <h1 class="text-white text-uppercase">Laporan Pengaduan Jalan Rusak</h1>
+
+                        <div class="separator"></div>
+
+                        <h5 class=" text-uppercase text-white"><em>Menjadi perantara bagi masyarakat dengan pemerintah dalam pengaduan jalan rusak</em></h5>
+                        <br>
+                        <button type="button" class="btn btn-warning  btn-block">Lapor</button>
+                    </div>
+                </div>
+            </div><!--End off row-->
+        </div><!--End off container -->
+    </section> <!--End off Home Sections-->
+
+
+<section id="testimonial" class="testimonial fix roomy-100">
 <div class="container">
     <div class="row justify-content-center">
         <div class="col-md-8">
@@ -68,4 +91,5 @@
         </div>
     </div>
 </div>
+</section
 @endsection

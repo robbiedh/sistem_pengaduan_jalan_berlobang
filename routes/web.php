@@ -15,7 +15,15 @@
 //     return view('welcome');
 // });
 
-Route::get('/', 'GuestController@home');
+//Route::get('/', 'GuestController@home');
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
+
+// Route::get('/berita', 'GuestController@home');
+
+Route::get('/berita/{id}', 'GuestController@home');
+
+Route::get('/', function () {
+    return view('welcome');
+});
