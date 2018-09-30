@@ -12,16 +12,26 @@ class GuestController extends Controller
     //
     public function home($id)
     {
-        $data_news=$this->request_news($id);
-       
+        // $data_news=$this->request_news($id);
+        $client = new Client();
+        $res = $client->request('GET', 'https://newsapi.org/v2/top-headlines?country=id&apiKey=5751939ffffa41489c58d6f5408ac191');
+        $results=json_decode($res->getBody()->getContents(),true);
+        if($results['status']=='ok'){
+            $data_news=$results['articles'];
+       //    dd($results['articles']);
+            return view('berita',['data_news'=>$data_news]);
+        }else{
+            abort(404);
+        }
+    
       // $data_cuaca=YahooWeather::Country('indonesia','Bandung');
 
-   
+
       
     //  $position = Location::get();
 
 
-        return view('berita',['data_news'=>$data_news]);
+        
     }
     public function request_news($kategori)
     {

@@ -45,16 +45,50 @@
           {{-- Start weather  seaction  --}}
           <section id="testimonial" class="testimonial fix roomy-100">
                 <div class="container">
-                    <div class="row">
-                            <div class="col-md-12">
+                        <div class="row">
+                                <div class="col-md-12">
+                                        <div class="head_title text-left sm-text-center wow fadeInDown">
+                                            <h2>Hot News : </h2><option> </option> 
+                                            <div class="separator_left"></div>
+                                        </div>
+                                    </div>
+                   
+                        </div>
+                    {{-- <div class="row"> --}}
+                        @foreach($data_news as $key => $data)
+                            {{-- <div class="col-md-4">
                             <div class="card">
-                                    <img src="img_avatar.png" alt="Avatar" style="width:100%">
+                                    <img src="{{$data['urlToImage']}}" alt="Avatar" height="300px" style="width:100%">
                                     <div class="container">
-                                      <h4><b>John Doe</b></h4> 
-                                      <p>Architect & Engineer</p> 
+                                    <h4><b>{{$data['title']}}</b></h4> 
+                                      <p>{{$data['content']}}</p> 
                                     </div>
                                   </div>
-                            </div>
+                            </div> --}}
+                            
+                            @if($key/3==0|| $key==0)
+                            <br>
+                            <hr>
+                            <div class="row">
+                           
+                            @else
+                            <div class="col-md-4">
+                                    <div class="card" style="width: 18rem;">
+                                            <img class="card-img-top" width="100%" height="200px" src="{{$data['urlToImage']}}" onerror=this.src="{{asset('images/porfolio-04.jpg')}}">
+                                            <div class="card-body">
+                                              <h5 class="card-title">{{$data['title']}}</h5>
+                                              <p class="card-text">{{$data['content']}}</p>
+                                              <a href="{{$data['url']}}" class="btn btn-primary">Lihat Berita</a>
+                                            </div>
+                                          </div>
+                                    </div>
+
+
+                            @endif
+                            {{-- </div> --}}
+                            
+                           @endforeach
+        
 
                     </div>
                         </div>
