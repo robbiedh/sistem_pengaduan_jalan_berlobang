@@ -27,7 +27,6 @@ class HomeController extends Controller
     public function index()
     {
         $data_news=$this->request_news();
-        dd($data_news);
         return view('home',['data_news'=>$data_news]);
     }
 

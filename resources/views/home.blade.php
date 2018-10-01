@@ -1,5 +1,5 @@
-@extends('layouts.app')
-
+@extends('layouts.admin_lte')
+{{-- 
 @section('content')
 <div class="container">
     <div class="row justify-content-center">
@@ -20,4 +20,4 @@
         </div>
     </div>
 </div>
-@endsection
+@endsection --}}
