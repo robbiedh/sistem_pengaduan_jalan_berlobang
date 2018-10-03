@@ -8,8 +8,8 @@
         <link rel="icon" type="{{asset('image/png')}}" href="favicon.ico">
 
         <!--Google Fonts link-->
-        <script src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
-<script src="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
+        {{-- <script src="http://code.jquery.com/jquery-1.11.1.min.js"></script> --}}
+{{-- <script src="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script> --}}
         <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet">
         <script src = "https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
         <link href="https://fonts.googleapis.com/css?family=Crimson+Text:400,400i,600,600i,700,700i" rel="stylesheet">
@@ -30,36 +30,28 @@
  {{-- <link rel="stylesheet" href="{{asset('css/plugins.css')}}" /> --}}
 
         <!--Theme custom css -->
-        <link rel="stylesheet" href="{{asset('css/style.css')}}">
-        <!--<link rel="stylesheet" href="{{asset('css/colors/maron.css')}}">-->
+         <link rel="stylesheet" href="{{asset('css/style.css')}}"> 
+        {{-- <link rel="stylesheet" href="{{asset('css/colors/maron.css')}}"> --}}
 
         <!--Theme Responsive css-->
-        <link rel="stylesheet" href="{{asset('css/responsive.css')}}" />
+         <link rel="stylesheet" href="{{asset('css/responsive.css')}}" /> 
 
-        <script src="{{asset('js/vendor/modernizr-2.8.3-respond-1.4.2.min.js')}}"></script>
+        {{-- <script src="{{asset('js/vendor/modernizr-2.8.3-respond-1.4.2.min.js')}}"></script> --}}
     </head>
 
     <body data-spy="scroll" data-target=".navbar-collapse">
 
 
         <!-- Preloader -->
-
+{{-- 
         <div id="loading">
             <div id="loading-center">
                 <div id="loading-center-absolute">
                     <div class="object"></div>
-                    <div class="object"></div>
-                    <div class="object"></div>
-                    <div class="object"></div>
-                    <div class="object"></div>
-                    <div class="object"></div>
-                    <div class="object"></div>
-                    <div class="object"></div>
-                    <div class="object"></div>
-                    <div class="object"></div>
+                 
                 </div>
             </div>
-        </div>
+        </div> --}}
 
         {{-- <!--End off Preloader --> --}}
         {{-- <section id="testimonial" class="testimonial fix roomy-100"> --}}
@@ -73,7 +65,7 @@
                 <div class="container">    
                     <!-- Start Header Navigation -->
                     <div class="navbar-header">
-                        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar-menu">
+                        <button type="button" class="navbar-toggle" >
                             <i class="fa fa-bars"></i>
                         </button>
                         <a class="navbar-brand" href="index.html">
@@ -85,8 +77,8 @@
                     <!-- End Header Navigation -->
 
                     <!-- Collect the nav links, forms, and other content for toggling -->
-                    <div class="collapse navbar-collapse" id="navbar-menu">
-                        <ul class="nav navbar-nav navbar-right" data-in="fadeInDown" data-out="fadeOutUp">
+                    <div class="collapse navbar-collapse" >
+                        <ul class="nav navbar-nav navbar-right"  >
                             <li><a href="/">home</a></li> 
                             <li><a href="aboutus.html">Laporan</a></li>                                              
                             <li><a href="{{ url('berita/1')}}">Berita</a></li>                            
@@ -174,7 +166,7 @@
     
     
             <script src="{{asset('js/plugins.js')}}"></script>
-            <script src="{{asset('js/main.js')}}"></script>
+             <script src="{{asset('js/main.js')}}"></script>
     
         </body>
     </html>

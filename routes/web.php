@@ -27,3 +27,13 @@ Route::get('/berita/{id}', 'GuestController@home');
 Route::get('/', function () {
     return view('welcome');
 });
+
+
+
+
+
+//wilayah provinsi 
+Route::get('/provinsi', 'UserController@get_provinsi');
+Route::get('/kota/{id}', 'UserController@get_kota');
+Route::get('/kecamatan/{id}', 'UserController@get_kecamatan');
+Route::get('/desa/{id}', 'UserController@get_desa');
