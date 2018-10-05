@@ -29,7 +29,8 @@ Route::get('/', function () {
 });
 
 
-
+//User
+Route::post('simpan_pangaduan', 'UserController@simpan_pangaduan');
 
 
 //wilayah provinsi 

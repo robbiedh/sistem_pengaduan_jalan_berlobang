@@ -4,21 +4,53 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use GuzzleHttp\Client;
+use Validator;
+use App\Laporan;
 
 class UserController extends Controller
 {
     public function simpan_pangaduan(Request $request)
     {
+       
         $validator = Validator::make($request->all(), [
-            'title' => 'required|unique:posts|max:255',
-            'body' => 'required',
+            'provinsi' => 'required',
+            'kabupaten' => 'required',
+            'kecamatan' => 'required',
+            'desa' => 'required',
+            'lat' => 'required',
+            'long' => 'required',
+            'current_possition' => 'required',
+            'keterangan' => 'required',
+            'foto' => 'required|max:2000|mimes:jpg,png,jpeg',
+            'tingkat_kerusakan'=>'required',
         ]);
 
         if ($validator->fails()) {
             return redirect('/home')
                         ->withErrors($validator)
                         ->withInput();
+        }else{
+            $laporaon =new Laporan;
+            $laporaon->id_user='0';
+            $laporaon->provinsi=$request->provinsi;
+            $laporaon->kabupaten=$request->kabupaten;
+            $laporaon->kecamatan=$request->kecamatan;
+            $laporaon->desa=$request->desa;
+            $laporaon->lat=$request->lat;
+            $laporaon->long=$request->long;
+            $laporaon->current_possition=$request->current_possition;
+            $laporaon->keterangan=$request->keterangan;
+            $laporaon->tingkat_kerusakan=$request->tingkat_kerusakan;
+            $laporaon->foto='';
+            $laporaon->save();
+
+            // dd($request->all());
+            return redirect('/home')
+            ->withErrors("Input Laporan Berhasil ")
+            ->withInput();
+
         }
+
     }
     public function get_provinsi()
     {

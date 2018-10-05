@@ -31,21 +31,21 @@
                         </div>
                         <!-- /.box-header -->
                         <!-- form start -->
-                        <form role="form">
-                            
-                            <input hidden type="text" name="provinsi" />
-                          <input hidden type="text" name="kabupaten" />
-                          <input hidden type="text" name="kecamatan" />
-                          <input hidden type="text" name="desa" />
+                        <form method="POST" action="simpan_pangaduan" enctype="multipart/form-data" role="form">
+                          @csrf
+                            <input hidden type="text" name="provinsi" id="i_provinsi" />
+                          <input hidden type="text" name="kabupaten" id="i_kabupaten" />
+                          <input hidden type="text" name="kecamatan" id="i_kecamatan" />
+                          <input hidden type="text" name="desa" id="i_desa" />
+                          <input hidden type="text" name="lat" id="lat" />
+                          <input hidden type="text" name="long" id="long" />
+                          
                           <div class="box-body">
                               <div class="form-group">
                                   <label for="exampleInputEmail1">Current possition</label>
-                                  <input  disabled type="text" class="form-control" id="user_position" >
+                                  <input  readonly type="text" name="current_possition" class="form-control" id="user_position" >
                                 </div>
-                                <div class="form-group">
-                                        <label for="exampleInputEmail1">Detail Lokasi</label>
-                                        <input type="text" class="form-control" id="exampleInputEmail1" placeholder="Masukan detail Lokasi ">
-                                      </div>
+                             
                                      
                             <div class="form-group">
                               <label for="exampleInputEmail1">Provinsi</label>
@@ -65,16 +65,21 @@
                             </div>
                             <div class="form-group">
                                     <label for="exampleInputEmail1">Tingkat kerusakan</label>
-                                    <select class="form-control">
-                    <option>Low</option>
-                    <option>Medium</option>
-                    <option>Hard</option>
+                                    <select name="tingkat_kerusakan" class="form-control">
+                    <option value="low">Low</option>
+                    <option value="medium">Medium</option>
+                    <option value="hard">Hard</option>
                   </select>
                                 </div>
+                                <div class="form-group">
+                                  <label for="exampleInputFile"> Keterangan</label>
+                                  <input type="text" class="form-control" name="keterangan">
+                
+                                 </div>
                                  
                             <div class="form-group">
                               <label for="exampleInputFile">Upload Foto Jalan Berlobang</label>
-                              <input type="file" id="exampleInputFile">
+                              <input type="file" id="exampleInputFile" name="foto">
             
                              </div>
                             <div class="checkbox">
@@ -83,6 +88,11 @@
                               </label>
                             </div>
                           </div>
+                          @if ($errors->any())
+     @foreach ($errors->all() as $error)
+         <div>{{$error}}</div>
+     @endforeach
+ @endif
                           <!-- /.box-body -->
             
                           <div class="box-footer">
@@ -138,6 +148,8 @@
   }
 
   function get_detail(lat,long) {
+    $("#lat").val(lat);
+    $("#long").val(long);
     $.ajax({   
         type: "GET",
         url: "https://maps.googleapis.com/maps/api/geocode/json?latlng="+lat+","+long+"&key=AIzaSyDbCEZR7lFNoJCdptAZ4zlZNnAMU2pf7Bc",             
@@ -194,8 +206,10 @@ src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDbCEZR7lFNoJCdptAZ4zlZNnA
    
               //Mengambil value dari option select provinsi kemudian parameternya dikirim menggunakan ajax 
               var prov = $('#provinsi').val();
+              var name_prov=$('#provinsi').find('option:selected').attr("name");
               // var  provinsi_terpilih =$('#provinsi').val($(this).find("option:selected").attr("name"));
-
+              $("#i_provinsi").val(name_prov);
+              console.log(name_prov);
             
               $.ajax({
                   type : 'GET',
@@ -212,7 +226,9 @@ src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDbCEZR7lFNoJCdptAZ4zlZNnA
    
               //Mengambil value dari option select provinsi kemudian parameternya dikirim menggunakan ajax 
               var prov = $('#kabupaten').val();
-   
+              var name_kab=$('#kabupaten').find('option:selected').attr("name");
+              $("#i_kabupaten").val(name_kab);
+              console.log(name_kab);
               $.ajax({
                   type : 'GET',
                   url :"{{url('/kecamatan/')}}/"+prov,
@@ -228,6 +244,9 @@ src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDbCEZR7lFNoJCdptAZ4zlZNnA
    
    //Mengambil value dari option select provinsi kemudian parameternya dikirim menggunakan ajax 
    var prov = $('#kecamatan').val();
+   var name_kec=$('#kecamatan').find('option:selected').attr("name");
+   $("#i_kecamatan").val(name_kec);
+   console.log(name_kec);
 
    $.ajax({
        type : 'GET',
@@ -239,6 +258,11 @@ src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDbCEZR7lFNoJCdptAZ4zlZNnA
            $("#desa").html(data);
        }
    });
+});
+$('#desa').change(function(){
+  var name_des=$('#desa').find('option:selected').attr("name");
+   $("#i_desa").val(name_des);
+   console.log(name_des);
 });
   </script>>
 
