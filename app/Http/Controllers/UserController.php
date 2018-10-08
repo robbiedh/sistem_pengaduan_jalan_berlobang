@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use GuzzleHttp\Client;
 use Validator;
 use App\Laporan;
+use Auth;
 
 class UserController extends Controller
 {
@@ -30,8 +31,12 @@ class UserController extends Controller
                         ->withErrors($validator)
                         ->withInput();
         }else{
+            $avatarName =Auth::user()->id.'_avatar'.time().'.'.request()->foto->getClientOriginalExtension();
+
+            $request->foto->storeAs('avatars',$avatarName);
+
             $laporaon =new Laporan;
-            $laporaon->id_user='0';
+            $laporaon->id_user=Auth::user()->id;
             $laporaon->provinsi=$request->provinsi;
             $laporaon->kabupaten=$request->kabupaten;
             $laporaon->kecamatan=$request->kecamatan;
@@ -41,7 +46,7 @@ class UserController extends Controller
             $laporaon->current_possition=$request->current_possition;
             $laporaon->keterangan=$request->keterangan;
             $laporaon->tingkat_kerusakan=$request->tingkat_kerusakan;
-            $laporaon->foto='';
+            $laporaon->foto=$avatarName;
             $laporaon->save();
 
             // dd($request->all());
@@ -51,6 +56,11 @@ class UserController extends Controller
 
         }
 
+    }public function daftar_laporan()
+    {
+        $data_laporan=Laporan::where('id_user', Auth::user()->id)->get();
+        
+        return view('daftar_laporan',['data_laporan'=>$data_laporan]);
     }
     public function get_provinsi()
     {

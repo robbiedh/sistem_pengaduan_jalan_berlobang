@@ -129,8 +129,8 @@
       <ul class="sidebar-menu" data-widget="tree">
         <li class="header">MAIN NAVIGATION</li>
         
-        <li><a href="https://adminlte.io/docs"><i class="fa fa-book"></i> <span>Laporkan Jalan Berlobang</span></a></li>
-        <li><a href="https://adminlte.io/docs"><i class="fa fa-book"></i> <span> Daftar Laporan Jalan Berlobang</span></a></li>
+        <li><a href="/home"><i class="fa fa-book"></i> <span>Laporkan Jalan Berlobang</span></a></li>
+        <li><a href="/daftar_pengaduan"><i class="fa fa-book"></i> <span> Daftar Laporan Jalan Berlobang</span></a></li>
        
         
         
