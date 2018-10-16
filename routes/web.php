@@ -39,3 +39,8 @@ Route::get('/provinsi', 'UserController@get_provinsi');
 Route::get('/kota/{id}', 'UserController@get_kota');
 Route::get('/kecamatan/{id}', 'UserController@get_kecamatan');
 Route::get('/desa/{id}', 'UserController@get_desa');
+
+
+//Login
+Route::get('login/{provider}', 'Auth\LoginController@redirectToProvider');
+Route::get('login/{provider}/callback', 'Auth\LoginController@handleProviderCallback');
