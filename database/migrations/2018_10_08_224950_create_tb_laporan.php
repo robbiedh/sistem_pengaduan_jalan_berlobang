@@ -27,6 +27,7 @@ class CreateTbLaporan extends Migration
             $table->string('tingkat_kerusakan');
             $table->string('keterangan');
             $table->string('foto');
+            $table->string('status')->default('Waiting');
             $table->timestamp('created_at')->nullable();
             $table->timestamp('updated_at')->nullable();
         });
