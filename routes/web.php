@@ -44,3 +44,7 @@ Route::get('/desa/{id}', 'UserController@get_desa');
 //Login
 Route::get('login/{provider}', 'Auth\LoginController@redirectToProvider');
 Route::get('login/{provider}/callback', 'Auth\LoginController@handleProviderCallback');
+
+
+// admin 
+Route::get('admin/daftar_user/', 'AdminController@daftar_user');
