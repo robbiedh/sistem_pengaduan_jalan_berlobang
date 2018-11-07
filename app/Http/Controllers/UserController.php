@@ -7,6 +7,9 @@ use GuzzleHttp\Client;
 use Validator;
 use App\Laporan;
 use Auth;
+use Illuminate\Support\Facades\Mail;
+
+use App\Mail\EmailPemberitahuan;
 
 class UserController extends Controller
 {
@@ -48,7 +51,9 @@ class UserController extends Controller
             $laporaon->tingkat_kerusakan=$request->tingkat_kerusakan;
             $laporaon->foto=$avatarName;
             $laporaon->save();
+            $data ='Terimakasih Sudah Melakukan pengaduan Jalan Berlubang';
 
+            Mail::to(Auth::user()->email)->send(new EmailPemberitahuan($data));
             // dd($request->all());
             return redirect('/home')
             ->withErrors("Input Laporan Berhasil ")
@@ -122,5 +127,12 @@ class UserController extends Controller
                 echo "<option value='".$data['id']."' name='".$data['nama']."'>".$data['nama']."</option>";
             }
         }
+        }
+
+        public function test()
+        {
+            $data ='Terimakasih Sudah Melakukan pengaduan Jalan Berlubang';
+
+            Mail::to('robby.dh596@gmail.com')->send(new EmailPemberitahuan($data));
         }
     }
