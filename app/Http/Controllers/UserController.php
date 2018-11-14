@@ -133,6 +133,6 @@ class UserController extends Controller
         {
             $data ='Terimakasih Sudah Melakukan pengaduan Jalan Berlubang';
 
-            Mail::to('robby.dh596@gmail.com')->send(new EmailPemberitahuan($data));
+            Mail::to('rifqyirsyad7@gmail.com')->send(new EmailPemberitahuan($data));
         }
     }
