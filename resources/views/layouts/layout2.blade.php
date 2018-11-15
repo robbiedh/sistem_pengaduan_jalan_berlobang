@@ -60,7 +60,7 @@
             <!--Home page style-->
 
 
-            <nav class="navbar navbar-default navbar-fixed white no-background bootsnav text-uppercase">
+            <nav class="navbar navbar-default navbar-fixed black no-background bootsnav text-uppercase">
 
                 <div class="container">    
                     <!-- Start Header Navigation -->

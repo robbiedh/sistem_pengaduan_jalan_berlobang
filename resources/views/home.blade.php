@@ -78,7 +78,7 @@
                                  </div>
                                  
                             <div class="form-group">
-                              <label for="exampleInputFile">Upload Foto Jalan Berlobang</label>
+                              <label for="exampleInputFile">Upload Foto Jalan Rusak</label>
                               <input type="file" id="exampleInputFile" name="foto">
             
                              </div>
@@ -264,7 +264,7 @@ $('#desa').change(function(){
    $("#i_desa").val(name_des);
    console.log(name_des);
 });
-  </script>>
+  </script>
 
 
 

@@ -1,26 +1,11 @@
-@extends('layouts.layout')
+@extends('layouts.layout2')
 
 @section('content')
-<section id="hello" class="home bg-mega">
-        <div class="overlay">
-        </div>
-        <div class="container">
-            <div class="row">
-                <div class="main_home text-center">
-                    <div class="home_text">
-                        <h4 class="text-white text-uppercase">a new creative studio</h4>
-                        <h1 class="text-white text-uppercase">Laporan Pengaduan Jalan Rusak</h1>
 
-                        <div class="separator"></div>
-
-                        <h5 class=" text-uppercase text-white"><em>Menjadi perantara bagi masyarakat dengan pemerintah dalam pengaduan jalan rusak</em></h5>
-                        <br>
-                        <button type="button" class="btn btn-warning  btn-block">Lapor</button>
-                    </div>
-                </div>
-            </div><!--End off row-->
-        </div><!--End off container -->
-    </section> <!--End off Home Sections-->
+<br>
+<br>
+<br>
+<br>
 
 <head>
 <meta charset="utf-8">
@@ -129,7 +114,9 @@
             <a href="{{ url('login/google')}}" class="btn btn-danger"><i class="fa fa-google"></i>&nbsp; Google</a>
         </div>
     </form>
-    <p class="text-center text-muted small">Don't have an account? <a href="#">Sign up here!</a></p>
+    <p class="text-center text-muted small">Don't have an account? <a href="{{ route('register') }}">Sign up here!</a></p>
+    <br>
+    <br>
 </div>
 </body>
 </section>
