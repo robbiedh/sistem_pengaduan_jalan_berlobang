@@ -15,6 +15,9 @@ class Laporan extends Model
         'foto',
     ];
 
+    public function user(){
+        return $this->belongsTo('App\User');
+    }
 
     /**
      * The attributes that should be hidden for arrays.

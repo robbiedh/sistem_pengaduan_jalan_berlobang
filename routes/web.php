@@ -52,4 +52,6 @@ Route::get('test_email', 'UserController@test');
 
 // admin 
 Route::get('admin/daftar_user/', 'AdminController@daftar_user');
+Route::get('admin/daftar_laporan/', 'AdminController@index');
+Route::get('admin/laporan/{id_laporan}', 'AdminController@laporan');
 

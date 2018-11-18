@@ -19,7 +19,7 @@
             </div>
             <!-- /.box-body-->
               <!-- /.row -->
-          </div
+          </div>
     </div>
 </section>
 
@@ -89,17 +89,16 @@
                             </div>
                           </div>
                           @if ($errors->any())
-     @foreach ($errors->all() as $error)
-         <div>{{$error}}</div>
-     @endforeach
- @endif
+                              @foreach ($errors->all() as $error)
+                                  <div>{{$error}}</div>
+                              @endforeach
+                          @endif
                           <!-- /.box-body -->
             
                           <div class="box-footer">
                               <button type="submit" class="btn btn-primary">Simpan</button>
-                            {{-- <button type="submit" class="btn btn- --}}
-
-            </div>
+                            {{-- <button type="submit" class="btn btn-" --}}
+                            </div>
         
 
 </section>

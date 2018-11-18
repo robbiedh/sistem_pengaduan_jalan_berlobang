@@ -95,8 +95,6 @@
                         </ul>
                     </div><!-- /.navbar-collapse -->
                 </div>  
-
-
             </nav>
             
             @yield('content')

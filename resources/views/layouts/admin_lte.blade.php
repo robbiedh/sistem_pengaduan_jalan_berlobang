@@ -132,7 +132,7 @@
         <li><a href="/home"><i class="fa fa-book"></i> <span>Laporkan Jalan Berlobang</span></a></li>
         <li><a href="/daftar_pengaduan"><i class="fa fa-book"></i> <span> Daftar Laporan Jalan Berlobang</span></a></li>
        @else
-       <li><a href="/home"><i class="fa fa-book"></i> <span>Lihat laporan </span></a></li>
+       <li><a href="/admin/daftar_laporan"><i class="fa fa-book"></i> <span>Lihat laporan </span></a></li>
         <li><a href="/admin/daftar_user/"><i class="fa fa-book"></i> <span> Daftar user </span></a></li>
         @endif
         
