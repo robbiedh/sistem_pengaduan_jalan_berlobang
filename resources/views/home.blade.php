@@ -56,7 +56,7 @@
                               <select class="form-control" id="kabupaten"> </select>
                             </div>
                             <div class="form-group">
-                              <label for="exampleInputEmail1">kecamatan</label>
+                              <label for="exampleInputEmail1">Kecamatan</label>
                               <select class="form-control" id="kecamatan"> </select>
                             </div>
                             <div class="form-group">
@@ -78,13 +78,13 @@
                                  </div>
                                  
                             <div class="form-group">
-                              <label for="exampleInputFile">Upload Foto Jalan Berlobang</label>
+                              <label for="exampleInputFile">Upload Foto Jalan Rusak</label>
                               <input type="file" id="exampleInputFile" name="foto">
             
                              </div>
                             <div class="checkbox">
                               <label>
-                                <input type="checkbox">Data Sesui dengan keyataan 
+                                <input type="checkbox">Data Sesuai dengan keyataan 
                               </label>
                             </div>
                           </div>
@@ -263,7 +263,7 @@ $('#desa').change(function(){
    $("#i_desa").val(name_des);
    console.log(name_des);
 });
-  </script>>
+  </script>
 
 
 

@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <title>Sistem Pengaduan Jalan Berlobang | Dashboard</title>
+  <title>Sistem Pengaduan Jalan Rusak | Dashboard</title>
   <!-- Tell the browser to be responsive to screen width -->
   <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
  
@@ -64,7 +64,7 @@
           <li class="dropdown user user-menu">
             <a href="#" class="dropdown-toggle" data-toggle="dropdown">
               <img src="{{asset('admin_lte/dist/img/user2-160x160.jpg')}}" class="user-image" alt="User Image">
-              <span class="hidden-xs">Alexander Pierce</span>
+              <span class="hidden-xs"> {{ Auth::user()->name }} </span>
             </a>
             <ul class="dropdown-menu">
               <!-- User image -->
@@ -129,8 +129,8 @@
       <ul class="sidebar-menu" data-widget="tree">
         <li class="header">MAIN NAVIGATION</li>
        @if( Auth::user()->acces=='')
-        <li><a href="/home"><i class="fa fa-book"></i> <span>Laporkan Jalan Berlobang</span></a></li>
-        <li><a href="/daftar_pengaduan"><i class="fa fa-book"></i> <span> Daftar Laporan Jalan Berlobang</span></a></li>
+        <li><a href="/home"><i class="fa fa-book"></i> <span>Laporkan Jalan Rusak</span></a></li>
+        <li><a href="/daftar_pengaduan"><i class="fa fa-book"></i> <span> Daftar Laporan Jalan Rusak</span></a></li>
        @else
        <li><a href="/admin/daftar_laporan"><i class="fa fa-book"></i> <span>Lihat laporan </span></a></li>
         <li><a href="/admin/daftar_user/"><i class="fa fa-book"></i> <span> Daftar user </span></a></li>
@@ -670,7 +670,7 @@
     <div class="pull-right hidden-xs">
       <b>Version</b> 2.4.0
     </div>
-    <strong>Copyright &copy; 2014-2016 <a href="https://adminlte.io">Almsaeed Studio</a>.</strong> All rights
+    <strong>Copyright &copy; 2018.</strong> All rights
     reserved.
   </footer>
 

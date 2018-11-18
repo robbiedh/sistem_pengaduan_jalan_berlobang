@@ -3,7 +3,7 @@
 @section('content')
 <div class="box box-info">
     <div class="box-header with-border">
-      <h3 class="box-title">Daftar laporan </h3>
+      <h3 class="box-title"><b>Daftar laporan</b></h3>
 
       <div class="box-tools pull-right">
         <button type="button" class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-minus"></i>
@@ -19,8 +19,8 @@
           <tr>
             <th>No </th>
             <th>Alamat </th>
-            <th>Detai Lokasi </th>
-            <th>Tingkat kerusakna </th>
+            <th>Detail Lokasi </th>
+            <th>Tingkat kerusakan </th>
             <th>Keterangan </th>
             <th>Foto  </th>
             <th>Tanggal pengaduan  </th>

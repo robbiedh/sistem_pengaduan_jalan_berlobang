@@ -79,19 +79,15 @@
                     <!-- Collect the nav links, forms, and other content for toggling -->
                     <div class="collapse navbar-collapse" >
                         <ul class="nav navbar-nav navbar-right"  >
-                            <li><a href="/">home</a></li> 
-                            <li><a href="aboutus.html">Laporan</a></li>                                              
-                            <li><a href="{{ url('berita/1')}}">Berita</a></li>                            
-                            <li><a href="blog.html">Cuaca</a></li>                                    
-                            <li><a href="contactus.html">Kontak</a></li>  
-                            
-                            <li class="nav-item">
-                                <a class="nav-link" href="{{ route('login') }}">{{ __('Login') }}</a>
-                            </li>
+                            <li><a href="/">home</a></li>                                               
+                            <li><a href="{{ url('berita/1')}}">Berita & Cuaca</a></li>                                                             
                             <li class="nav-item">
                                 <a class="nav-link" href="{{ route('register') }}">{{ __('Register') }}</a>
                             </li>
-                                       
+                            
+                            <li class="nav-item">
+                                <a class="nav-link" href="{{ route('login') }}">{{ __('Login') }}</a>
+                            </li>                                       
                         </ul>
                     </div><!-- /.navbar-collapse -->
                 </div>  

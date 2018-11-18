@@ -44,7 +44,7 @@ return [
     'google' => [
         'client_id' => '292585836724-qhsltssnjllrv6sa7kv5lia5618u11ge.apps.googleusercontent.com',         // Your GitHub Client ID
         'client_secret' => 'YN1IUSZWzGvaX0MXD5xdfo3k', // Your GitHub Client Secret
-        'redirect' => 'http://localhost:8000/login/google/callback',
+        'redirect' => env('REDIRECT_GOOGLE'),
     ],
 
 ];

@@ -63,7 +63,7 @@ class LoginController extends Controller
         //Check if user exists and log user in
 
         $user = User::where('email', $userSocial->getEmail())->first();
-        if($user) {
+        if(count($user)>0) {
 
             if(Auth::loginUsingId($user->id)){
                 return redirect()->route('home');
@@ -79,8 +79,8 @@ class LoginController extends Controller
         ]);
 
         //Finally log the user in
-        if ($userSignup) {
-            if(Auth::loginUsingId($user->id)){
+        if (count($userSignup)>0) {
+            if(Auth::loginUsingId($userSignup->id)){
                 return redirect()->route('home');
             }
         }

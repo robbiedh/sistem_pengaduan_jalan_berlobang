@@ -161,6 +161,8 @@ return [
         App\Providers\EventServiceProvider::class,
         App\Providers\RouteServiceProvider::class,
         Stevebauman\Location\LocationServiceProvider::class,
+        // laravel passport 
+        Laravel\Passport\PassportServiceProvider::class,
 
     ],
 
