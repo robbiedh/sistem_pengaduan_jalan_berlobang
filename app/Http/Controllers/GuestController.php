@@ -6,10 +6,17 @@ use Illuminate\Http\Request;
 use GuzzleHttp\Client;
 use YahooWeather;
 use Location;
+use App\Laporan;
 
 class GuestController extends Controller
 {
     //
+    public function list_data(){
+        $data_laporan=Laporan::all();
+    
+        return view('welcome',['data_laporan'=>$data_laporan]);
+    }
+    
     public function home($id)
     {
         // $data_news=$this->request_news($id);

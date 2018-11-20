@@ -8,8 +8,8 @@
         <link rel="icon" type="{{asset('image/png')}}" href="favicon.ico">
 
         <!--Google Fonts link-->
-        {{-- <script src="http://code.jquery.com/jquery-1.11.1.min.js"></script> --}}
-{{-- <script src="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script> --}}
+        {{-- <script src="https://code.jquery.com/jquery-1.11.1.min.js"></script> --}}
+{{-- <script src="https://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script> --}}
         <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet">
         <script src = "https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
         <link href="https://fonts.googleapis.com/css?family=Crimson+Text:400,400i,600,600i,700,700i" rel="stylesheet">

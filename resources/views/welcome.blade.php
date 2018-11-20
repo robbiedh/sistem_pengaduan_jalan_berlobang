@@ -28,41 +28,117 @@
             <section id="feature" class="feature p-top-100">
 
                 <div class="container">
+                    
                     <div class="row">
-                        <div class="main_counter text-center">
-                            <div class="col-md-3">
-                                <div class="counter_item">
-                                    <h2 class="statistic-counter"><em> 60 </em></h2>
-                                    <div class="separator_small"></div>
-                                    <h5>Laporan Masuk</h5>
-                                </div>
-                            </div>
-                            <div class="col-md-3">
-                                <div class="counter_item sm-m-top-40">
-                                    <h2 class="statistic-counter"><em>15</em> </h2>
-                                    <div class="separator_small"></div>
-                                    <h5>Belum Terverifikasi</h5>
-                                </div>
-                            </div>
-                            <div class="col-md-3">
-                                <div class="counter_item sm-m-top-40">
-                                    <h2 class="statistic-counter"><em>20</em></h2>
-                                    <div class="separator_small"></div>
-                                    <h5>Telah Terverifikasi</h5>
-                                </div>
-                            </div>
-                            <div class="col-md-3">
-                                <div class="counter_item sm-m-top-40">
-                                    <h2 class="statistic-counter"><em>25</em></h2>
-                                    <div class="separator_small"></div>
-                                    <h5>Laporan Selesai</h5>
-                                </div>
-                            </div>
-                            
-                            
-                        </div>
+                          <div id="map" style="height: 250px; width: 100%; color:red; "></div>
+                       
                     </div><!--End off row-->
                 </div><!--End off container -->
+                 <script >
+    function initMap() {
+        var map = new google.maps.Map(document.getElementById('map'), {
+          zoom: 5,
+          
+          center: {lat: -0.789275, lng: 113.921327}
+        });
+
+        setMarkers(map);
+      }
+
+      // Data for the markers consisting of a name, a LatLng and a zIndex for the
+      // order in which these markers should display on top of each other.
+      var beaches = [
+        @foreach($data_laporan as $key => $data)
+        
+        ['{{$data->current_possition}}', {{$data->lat}}, {{$data->long}}, {{$key}}, '{{$data->foto}}', '{{$data->status}}' ],
+        
+        @endforeach
+      
+      ];
+      var contentString = '<div id="content">'+
+            '<div id="siteNotice">'+
+            '</div>'+
+            '<h1 id="firstHeading" class="firstHeading">Uluru</h1>'+
+            '<div id="bodyContent">'+
+            '<p><b>Uluru</b>, also referred to as <b>Ayers Rock</b>, is a large ' +
+            'sandstone rock formation in the southern part of the '+
+            'Northern Territory, central Australia. It lies 335&#160;km (208&#160;mi) '+
+            'south west of the nearest large town, Alice Springs; 450&#160;km '+
+            '(280&#160;mi) by road. Kata Tjuta and Uluru are the two major '+
+            'features of the Uluru - Kata Tjuta National Park. Uluru is '+
+            'sacred to the Pitjantjatjara and Yankunytjatjara, the '+
+            'Aboriginal people of the area. It has many springs, waterholes, '+
+            'rock caves and ancient paintings. Uluru is listed as a World '+
+            'Heritage Site.</p>'+
+            '<p>Attribution: Uluru, <a href="https://en.wikipedia.org/w/index.php?title=Uluru&oldid=297882194">'+
+            'https://en.wikipedia.org/w/index.php?title=Uluru</a> '+
+            '(last visited June 22, 2009).</p>'+
+            '</div>'+
+            '</div>';
+
+      function setMarkers(map) {
+        // Adds markers to the map.
+
+        // Marker sizes are expressed as a Size of X,Y where the origin of the image
+        // (0,0) is located in the top left of the image.
+
+        // Origins, anchor positions and coordinates of the marker increase in the X
+        // direction to the right and in the Y direction down.
+        var image = {
+          url: 'https://developers.google.com/maps/documentation/javascript/examples/full/images/beachflag.png',
+          // This marker is 20 pixels wide by 32 pixels high.
+          size: new google.maps.Size(20, 32),
+          // The origin for this image is (0, 0).
+          origin: new google.maps.Point(0, 0),
+          // The anchor for this image is the base of the flagpole at (0, 32).
+          anchor: new google.maps.Point(0, 32)
+        };
+       
+        var shape = {
+          coords: [1, 1, 1, 20, 18, 20, 18, 1],
+          type: 'poly'
+        };
+        
+        for (var i = 0; i < beaches.length; i++) {
+          var beach = beaches[i];
+         
+          
+         var  maker = new google.maps.Marker({
+            position: {lat: beach[1], lng: beach[2]},
+            map: map,
+            icon: image,
+            shape: shape,
+            title: beach[0],
+            zIndex: beach[3],
+            info: "<h3> Titik Lokasi </h3><br><p>Lokasi:"+beach[0]+"</p><br><p> Status : "+beach[5]+"</p><br><img  src='https://ubunubun-robbie-dev.c9users.io/storage/avatars/"+beach[4]+"' width='100' heght='100' />"
+            
+          });
+         var  infowindow = new google.maps.InfoWindow({
+          content: "<img  src='https://ubunubun-robbie-dev.c9users.io/storage/avatars/"+beach[4]+"' width='50' heght='50' />"
+        });
+        
+        //   maker.addListener('click', function() {
+        
+        //   infowindow.open(map,  maker);
+        // });
+        
+        google.maps.event.addListener( maker, 'click', function() {
+
+        infowindow.setContent( this.info );
+        infowindow.open( map, this );
+
+        });
+        
+    
+        }
+        
+        
+      }
+                       
+                                </script>
+   <script async defer
+    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDbCEZR7lFNoJCdptAZ4zlZNnAMU2pf7Bc&callback=initMap">
+    </script>
 
                 <br />
                 <br />

@@ -27,6 +27,8 @@ class AppServiceProvider extends ServiceProvider
      */
     public function register()
     {
-        //
+        if(config('app.env') == 'cloud' || config('app.env') == 'production'){
+            $this->app['url']->forceScheme('https');
+        }
     }
 }

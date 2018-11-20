@@ -5,7 +5,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <title>Sistem Pengaduan Jalan Rusak | Dashboard</title>
   <!-- Tell the browser to be responsive to screen width -->
-  <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
  
   <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
   <!-- Bootstrap 3.3.7 -->
@@ -132,8 +132,9 @@
         <li><a href="/home"><i class="fa fa-book"></i> <span>Laporkan Jalan Rusak</span></a></li>
         <li><a href="/daftar_pengaduan"><i class="fa fa-book"></i> <span> Daftar Laporan Jalan Rusak</span></a></li>
        @else
+        <li><a href="/home"><i class="fa fa-book"></i> <span>Laporkan Jalan Rusak</span></a></li>
        <li><a href="/admin/daftar_laporan"><i class="fa fa-book"></i> <span>Lihat laporan </span></a></li>
-        <li><a href="/admin/daftar_user/"><i class="fa fa-book"></i> <span> Daftar user </span></a></li>
+      <li><a href="/admin/daftar_user/"><i class="fa fa-book"></i> <span> Daftar user </span></a></li>
         @endif
         
         
