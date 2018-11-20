@@ -131,6 +131,7 @@
        @if( Auth::user()->acces=='')
         <li><a href="/home"><i class="fa fa-book"></i> <span>Laporkan Jalan Rusak</span></a></li>
         <li><a href="/daftar_pengaduan"><i class="fa fa-book"></i> <span> Daftar Laporan Jalan Rusak</span></a></li>
+        <li><a href="/development"><i class="fa fa-book"></i> <span>Development API</span></a></li>
        @else
         <li><a href="/home"><i class="fa fa-book"></i> <span>Laporkan Jalan Rusak</span></a></li>
        <li><a href="/admin/daftar_laporan"><i class="fa fa-book"></i> <span>Lihat laporan </span></a></li>

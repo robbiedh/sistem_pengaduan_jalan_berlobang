@@ -34,6 +34,7 @@ Route::get('/', 'GuestController@list_data');
 //User
 Route::post('simpan_pangaduan', 'UserController@simpan_pangaduan');
 Route::get('/daftar_pengaduan', 'UserController@daftar_laporan');
+Route::get('/development', 'UserController@development');
 
 
 //wilayah provinsi 

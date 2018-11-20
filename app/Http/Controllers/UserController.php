@@ -135,4 +135,10 @@ class UserController extends Controller
 
             Mail::to('rifqyirsyad7@gmail.com')->send(new EmailPemberitahuan($data));
         }
+        public function development(){
+             $user = Auth::user();
+            $token=  $user->createToken('nApp')->accessToken;
+            return view('developmen',['token'=>$token]);
+            
+        }
     }
